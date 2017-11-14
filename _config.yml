@@ -1,0 +1,22 @@
+###########
+# site.url, site.title
+
+title: 'JekyllStrap'
+
+########
+# more settings
+
+markdown: kramdown
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+path: /jekyllstrap
+url: 'https://theessemcraft.github.io/jekyllstrap'
+
+exclude:
+- README.md
+
+safe: true
+lsi: false
