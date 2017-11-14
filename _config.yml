@@ -12,8 +12,8 @@ sass:
   sass_dir: css
   style:    expanded
 
-path: /jekyllstrap
-url: 'https://theessemcraft.github.io/jekyllstrap'
+path: /jekyllstrap-theme
+url: 'https://theessemcraft.github.io/jekyllstrap-theme'
 
 exclude:
 - README.md
