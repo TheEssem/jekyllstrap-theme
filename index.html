@@ -35,6 +35,20 @@ title: Home
       </footer>
       </div>
     {% endfor %}
+    {% if paginator.total_pages > 1 %}
+    <ul class="pager main-pager">
+        {% if paginator.previous_page %}
+            <li class="previous">
+              <a href="{{ paginator.previous_page_path }}"><i class="fa fa-arrow-right"></i> Newer Posts</a>
+            </li>
+        {% endif %} 
+        {% if paginator.next_page %}
+            <li class="next">
+                <a href="{{ paginator.next_page_path }}">Older Posts <i class="fa fa-arrow-left"></i></a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
     </div>
     <div class="col-md-4">
         <div class="panel panel-default">
