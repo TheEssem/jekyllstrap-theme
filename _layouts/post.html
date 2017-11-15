@@ -13,6 +13,20 @@ layout: default
             <div class="panel-body">
                 {{ content }}
             </div>
+		<div class="panel-footer">
+                <ul class="pager blog-pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"
+                        title="{{page.previous.title}}">&larr; Previous Post</a>
+                    </li>
+                    {% endif %} {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
 		  <!--div class="panel panel-default">
               <div class="panel-body">
