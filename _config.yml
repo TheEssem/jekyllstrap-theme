@@ -1,19 +1,19 @@
 ###########
-# site.url, site.title
+# Title, URL, and relative path of your blog
+# Path can just be a slash if your blog is the main page
 
 title: 'JekyllStrap'
+url: 'https://theessemcraft.github.io/jekyllstrap-theme'
+path: /jekyllstrap-theme
 
 ########
-# more settings
+# Under the hood stuff - don't change if you don't need to
 
 markdown: kramdown
 
 sass:
   sass_dir: css
   style:    expanded
-
-path: /jekyllstrap-theme
-url: 'https://theessemcraft.github.io/jekyllstrap-theme'
 
 exclude:
 - README.md
