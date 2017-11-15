@@ -17,19 +17,20 @@ layout: default
                 <ul class="pager blog-pager">
                     {% if page.previous.url %}
                     <li class="previous">
-                        <a href="{{ page.previous.url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}"><i class="fa fa-arrow-left"></i> Previous Post</a>
+                        <a href="{{ page.previous.url | prepend: site.url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}"><i class="fa fa-arrow-left"></i> Previous Post</a>
                     </li>
                     {% endif %} {% if page.next.url %}
                     <li class="next">
-                        <a href="{{ page.next.url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post <i class="fa fa-arrow-right"></i></a>
+                        <a href="{{ page.next.url | prepend: site.url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post <i class="fa fa-arrow-right"></i></a>
                     </li>
                     {% endif %}
                 </ul>
             </div>
         </div>
-		  <!--div class="panel panel-default">
-              <div class="panel-body">
+
                 {% if page.comments %}
+	  <div class="panel panel-default">
+              <div class="panel-body">
 <div id="disqus_thread"></div>
 <script>
     /**
@@ -40,21 +41,19 @@ layout: default
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: 
      *  https://disqus.com/admin/universalcode/#configuration-variables
      */
-    /*
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
-        this.page.url = PAGE_URL;  
+        this.page.url = {{ page.url | prepend: site.url }};  
         
         // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        this.page.identifier = PAGE_IDENTIFIER; 
+        this.page.identifier = {{ page.id }}; 
     };
-    */
     
     (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
         var d = document, s = d.createElement('script');
         
         // IMPORTANT: Replace EXAMPLE with your forum shortname!
-        s.src = 'https://EXAMPLE.disqus.com/embed.js';
+        s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
         
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
@@ -66,10 +65,11 @@ layout: default
         comments powered by Disqus.
     </a>
 </noscript>
-                {% endif %}
               </div>
       </div>
-  </div-->
+                {% endif %}
+
+  </div>
   </div>
 
       <div class="col-md-4">
