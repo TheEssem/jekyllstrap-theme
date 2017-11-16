@@ -32,7 +32,7 @@
       <ul class="nav navbar-nav">
 {% if page.url == "/" %}
 	<li class="active"><a href="{{ site.url }}">Home <span class="sr-only">(current)</span></a></li>
-{% elsif pagination.page %}
+{% elsif pagination.page > 1 %}
 	<li class="active"><a href="{{ site.url }}">Home <span class="sr-only">(current)</span></a></li>
 {% else %}
         <li><a href="{{ site.url }}">Home</a></li>
