@@ -11,6 +11,9 @@ path: /jekyllstrap-theme
 
 markdown: kramdown
 
+paginate: 5
+paginate_path: "/page/:num/"
+
 sass:
   sass_dir: css
   style:    expanded
