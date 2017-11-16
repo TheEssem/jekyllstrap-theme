@@ -5,6 +5,8 @@ title: Home
 
   <div class="row">
 
+    <p>{{ paginator_page }}</p>
+    
     <div class="col-md-8">
       {% for post in paginator.posts limit:5%}
       <div class="panel panel-default">
