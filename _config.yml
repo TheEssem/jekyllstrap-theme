@@ -18,6 +18,7 @@ sass:
 exclude:
 - README.md
 
-gems: [jekyll-paginate]
+whitelist:
+  - jekyll-paginate
 
 lsi: false
