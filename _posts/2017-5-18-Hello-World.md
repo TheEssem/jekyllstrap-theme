@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Hello World!
-comments: true
 ---
 
 Woohoo, your Jekyll blog is up and running! Click this post's title or Read More for setup instructions.
