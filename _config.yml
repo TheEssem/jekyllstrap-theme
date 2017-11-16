@@ -5,6 +5,7 @@
 title: 'JekyllStrap'
 url: 'https://theessemcraft.github.io/jekyllstrap-theme'
 path: /jekyllstrap-theme
+disqus_shortname: 'jekyllstrap'
 
 ########
 # Under the hood stuff - don't change if you don't need to
