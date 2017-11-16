@@ -6,7 +6,7 @@ title: Home
   <div class="row">
 
     <div class="col-md-8">
-      {% for post in site.posts limit:5%}
+      {% for post in paginator.posts limit:5%}
       <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="text-primary"><a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></h3>
@@ -24,27 +24,18 @@ title: Home
         <div class="panel-footer">
           <a class="btn btn-primary" href="{{ post.url | prepend: site.url }}">Read More</a> 
       </div>
-      <footer class="post_meta">
-        <!--
-        {% for category in post.categories %}
-        <a href="{{"/category/" | append: category }}">
-          <data data-icon="ei-archive"></data>
-          {{category}}</a>
-        {% endfor %}
-        -->
-      </footer>
       </div>
     {% endfor %}
     {% if paginator.total_pages > 1 %}
     <ul class="pager main-pager">
         {% if paginator.previous_page %}
             <li class="previous">
-              <a href="{{ paginator.previous_page_path | prepend: site.url }}"><i class="fa fa-arrow-right"></i> Newer Posts</a>
+              <a href="{{ paginator.previous_page_path | relative_url }}"><i class="fa fa-arrow-right"></i> Newer Posts</a>
             </li>
         {% endif %} 
         {% if paginator.next_page %}
             <li class="next">
-                <a href="{{ paginator.next_page_path | prepend: site.url }}">Older Posts <i class="fa fa-arrow-left"></i></a>
+                <a href="{{ paginator.next_page_path | relative_url }}">Older Posts <i class="fa fa-arrow-left"></i></a>
             </li>
         {% endif %}
     </ul>
