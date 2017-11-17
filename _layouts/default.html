@@ -5,7 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	{% capture paginator_page %}
-	{{ site.paginate_path | prepend: site.url | replace: ":num", page | append: "index.html" }}
+	{{ site.paginate_path | prepend: site.url | replace: ":num", paginator.page }}
 	{% endcapture %}
 	
    <title>{{ page.title }} - {{ site.title }}</title>
