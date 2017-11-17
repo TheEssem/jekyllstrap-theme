@@ -45,7 +45,7 @@
 {% else %}
         <li><a href="{{ site.url }}">Home</a></li>
 {% endif %}
-	<li><a href="https://github.com/TheEssemCraft/jekyllstrap-theme">About</a></li>
+	<li><a href="{{ site.url }}/about.html">About</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -55,7 +55,7 @@
         {{ content }}
 	<hr>
         <footer>
-		<p>© {{ site.time | date: "%Y" }} {{ site.title }}</p><p>Theme by Essem</p>
+		<p>© {{ site.time | date: "%Y" }} {{ site.title }}. <a href="https://github.com/TheEssemCraft/jekyllstrap-theme">Theme by Essem</a></p>
         </footer>
     </div><!-- /.container -->
 	<style>
