@@ -8,6 +8,10 @@
 	{{ site.paginate_path | prepend: site.url | replace: ":num", paginator.page }}
 	{% endcapture %}
 	
+	{% capture page_url %}
+	{{ page.url | prepend: site.url }}
+	{% endcapture %}
+	
    <title>{{ page.title }} - {{ site.title }}</title>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="{{ "/css/style.css" | relative_url }}">
@@ -37,7 +41,7 @@
       <ul class="nav navbar-nav">
 {% if page.url == "/" %}
 	<li class="active"><a href="{{ site.url }}">Home <span class="sr-only">(current)</span></a></li>
-{% elsif page.url == paginator_page %}
+{% elsif page_url == paginator_page %}
 	<li class="active"><a href="{{ site.url }}">Home <span class="sr-only">(current)</span></a></li>
 {% else %}
         <li><a href="{{ site.url }}">Home</a></li>
