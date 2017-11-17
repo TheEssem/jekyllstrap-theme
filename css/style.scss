@@ -13,4 +13,6 @@ body {
   padding: 40px 15px;
 }
 
-img: $img-responsive, $img-rounded;
+img {
+  @include img-responsive;
+}
