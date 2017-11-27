@@ -25,4 +25,5 @@ exclude:
 whitelist:
   - jekyll-paginate
 
+safe: true
 lsi: false
