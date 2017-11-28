@@ -1,13 +1,13 @@
 ###########
-# Title, URL, and relative path of your blog
-# Path can just be a slash if your blog is the main page
+# Title, URL, base URL, and relative path of your blog
+# Path and base URL can just be a slash if your blog is the main page
 # Disqus shortname is required if you want to add comments to a post
 
 title: 'JekyllStrap'
-url: 'https://theessemcraft.github.io/jekyllstrap-theme'
+url: 'https://theessemcraft.github.io'
+baseurl: '/jekyllstrap-theme'
 path: '/jekyllstrap-theme'
 disqus_shortname: 'jekyllstrap'
-baseurl: '/jekyllstrap-theme'
 
 ########
 # Under the hood stuff - don't change if you don't need to
