@@ -17,11 +17,11 @@ layout: default
                 <ul class="pager blog-pager">
                     {% if page.previous.url %}
                     <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}"><i class="fa fa-arrow-left"></i> Previous Post</a>
+                        <a href="{{ page.previous.url | prepend: site.baseurl }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}"><i class="fa fa-arrow-left"></i> Previous Post</a>
                     </li>
                     {% endif %} {% if page.next.url %}
                     <li class="next">
-                        <a href="{{ page.next.url | prepend: site.url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post <i class="fa fa-arrow-right"></i></a>
+                        <a href="{{ page.next.url | prepend: site.baseurl }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post <i class="fa fa-arrow-right"></i></a>
                     </li>
                     {% endif %}
                 </ul>
@@ -43,7 +43,7 @@ layout: default
      */
     var disqus_config = function () {
         // Replace PAGE_URL with your page's canonical URL variable
-        this.page.url = "{{ page.url | prepend: site.url }}";  
+        this.page.url = "{{ page.url | absolute_url }}";  
         
         // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         this.page.identifier = "{{ page.id }}"; 
@@ -80,7 +80,7 @@ layout: default
                 <ul>
                     {% for post in site.posts offset: 0 limit: 5  %}
                         <li>
-                            <a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+                            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -109,7 +109,7 @@ layout: default
                                 <ul>
                                     {% for posts in category %} {% for post in posts %}
                                     {% if post.url %} 
-                                    <li><a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></li>
+                                    <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
                                     {% endif %}
                                     {% endfor %} {% endfor %}
                                 </ul>
@@ -121,7 +121,7 @@ layout: default
                                 <ul>
                                     {% for posts in category %} {% for post in posts %}
                                     {% if post.url %}
-                                    <li><a href="{{ post.url | prepend: site.url }}">{{ post.title }}</a></li>
+                                    <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
                                     {% endif %}
                                     {% endfor %} {% endfor %}
                                 </ul>
