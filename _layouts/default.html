@@ -12,10 +12,6 @@
 	{{ page.url | prepend: site.baseurl }}
 	{% endcapture %}
 	
-	{% capture about_url %}
-	{{ site.baseurl }}/about.html
-	{% endcapture %}
-	
    <title>{{ page.title }} - {{ site.title }}</title>
 	<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css">
@@ -49,7 +45,7 @@
 {% else %}
         <li><a href="{{ site.baseurl }}">Home</a></li>
 {% endif %}
-{% if page.url == "about_url" %}
+{% if page.url == "/about.html" %}
 	<li class="active"><a href="{{ site.baseurl }}/about.html">About <span class="sr-only">(current)</span></a></li>
 {% else %}
 	<li><a href="{{ site.baseurl }}/about.html">About</a></li>
