@@ -5,12 +5,14 @@
 
 // add more css stuff here
 
-body {
-  padding-top: 50px;
+html {
+  position: relative;
+  min-height: 100%;
 }
 
-.content {
-  padding: 40px 15px;
+body {
+  padding-top: 70px;
+  margin-bottom: 80px;
 }
 
 img {
