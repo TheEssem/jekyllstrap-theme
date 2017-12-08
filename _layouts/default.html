@@ -1,1 +1,74 @@
-{{ content }}
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	{% capture paginator_page %}
+	{{ site.paginate_path | prepend: site.baseurl | replace: ":num", paginator.page }}
+	{% endcapture %}
+	
+	{% capture page_url %}
+	{{ page.url | prepend: site.baseurl }}
+	{% endcapture %}
+	
+   <title>{{ page.title }} - {{ site.title }}</title>
+	<link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css">
+	<link href="{{ site.baseurl }}/css/font-awesome.css" rel="stylesheet">
+
+   <script src="{{ site.baseurl }}/js/jquery-1.12.4.min.js"></script>
+   <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.baseurl }}">{{ site.title }}</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+{% if page.url == "/" %}
+	<li class="active"><a href="{{ site.baseurl }}">Home <span class="sr-only">(current)</span></a></li>
+{% elsif page_url == paginator_page %}
+	<li class="active"><a href="{{ site.baseurl }}">Home <span class="sr-only">(current)</span></a></li>
+{% else %}
+        <li><a href="{{ site.baseurl }}">Home</a></li>
+{% endif %}
+{% if page.url == "/about.html" %}
+	<li class="active"><a href="{{ site.baseurl }}/about.html">About <span class="sr-only">(current)</span></a></li>
+{% else %}
+	<li><a href="{{ site.baseurl }}/about.html">About</a></li>
+{% endif %}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+        {{ content }}
+	<hr>
+        <footer>
+		<p>© {{ site.time | date: "%Y" }} {{ site.title }}. Theme by <a href="https://github.com/TheEssemCraft/jekyllstrap-theme">Essem</a></p>
+        </footer>
+    </div><!-- /.container -->
+	<style>
+	#img {
+	padding: 5px;
+	}
+	
+	#image {
+	margin: 5px;
+	}
+	</style>
+</body>
+</html>

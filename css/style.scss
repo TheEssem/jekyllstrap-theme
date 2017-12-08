@@ -1,0 +1,21 @@
+---
+---
+
+@import "bootstrap";
+
+// add more css stuff here
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 70px;
+  margin-bottom: 80px;
+}
+
+img {
+  @extend .img-responsive;
+  @extend .img-rounded;
+}
