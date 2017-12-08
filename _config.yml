@@ -12,6 +12,7 @@ disqus_shortname: 'jekyllstrap'
 ########
 # Under the hood stuff - don't change if you don't need to
 
+theme: jekyllstrap-theme
 markdown: kramdown
 
 paginate: 5
