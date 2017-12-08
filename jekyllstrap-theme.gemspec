@@ -10,7 +10,9 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/TheEssemCraft/jekyllstrap-theme"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r{^(css|fonts|js|_layouts|_includes|_sass|LICENSE|README)}i) }
+  spec.files         = `git ls-files -z`.split("\x0").select do |f|
+    f.match(%r{^(_(includes|layouts|sass)/|(css|fonts|js)/|(LICENSE|README)((\.(txt|md|markdown)|$)))|(404|index|_(config))((\.(md|html|yml)))}i)
+  end
 
   spec.add_runtime_dependency "jekyll", "~> 3.6"
   spec.add_runtime_dependency "jekyll-paginate", "~> 1.1.0"
